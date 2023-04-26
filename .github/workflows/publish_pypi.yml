@@ -18,3 +18,4 @@ jobs:
           PACKAGE_DIRECTORY: ${{ env.PACKAGE_DIRECTORY }}
           PUBLISH_REGISTRY: ${{ env.PUBLISH_REGISTRY }}
           POETRY_VERSION: 1.4.2
+          POETRY_CORE_VERSION: 1.5.2
