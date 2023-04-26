@@ -3,9 +3,16 @@ name: Build and publish python package
 on:
   release:
     types: [ published ]
+    push:
+      branches:
+        - master
+        - dev
+        - feature/*
 
 jobs:
-  publish-service-client-package:
+  publish_pypi_development:
+    environment: Development
+    if: $github.ref =~ /refs/tags/.*-beta/ || $github.ref =~ /refs/tags/.*-alpha/
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,5 +24,20 @@ jobs:
           PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
           PACKAGE_DIRECTORY: ${{ vars.PACKAGE_DIRECTORY }}
           PUBLISH_REGISTRY: ${{ vars.PUBLISH_REGISTRY }}
+          POETRY_VERSION: 1.4.2
+          POETRY_CORE_VERSION: 1.5.2
+  publish_pypi_production:
+    environment: Production
+    if: $github.ref !~ /refs/tags/.*-beta/ && $github.ref !~ /refs/tags/.*-alpha/
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Publish PyPi package
+        uses: code-specialist/pypi-poetry-publish@v1
+        with:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+          PACKAGE_DIRECTORY: ${{ vars.PACKAGE_DIRECTORY }}
           POETRY_VERSION: 1.4.2
           POETRY_CORE_VERSION: 1.5.2
