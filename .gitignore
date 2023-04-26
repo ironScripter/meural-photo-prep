@@ -1,2 +1,6 @@
 .idea
 data
+
+
+# Mac Files
+.DS_Store
