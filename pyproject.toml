@@ -2,7 +2,7 @@
 name = "meural-photo-prep"
 version = "0.1.0"
 description = "Module to assist in preparing photos for Netgear's Meural Canvas"
-authors = ["James Arnett <jamesarnett@icloud.com>"]
+authors = ["James Arnett <james.arnett@gmail.com>"]
 readme = "README.md"
 packages = [{include = "meural_photo_prep"}]
 
