@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "meural-photo-prep"
+version = "0.1.0"
+description = "Module to assist in preparing photos for Netgear's Meural Canvas"
+authors = ["James Arnett <jamesarnett@icloud.com>"]
+readme = "README.md"
+packages = [{include = "meural_photo_prep"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pillow = "^9.5.0"
+
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+format-jinja = """
+    {%- if distance == 0 -%}
+        {{ serialize_pep440(base, stage, revision) }}
+    {%- elif revision is not none -%}
+        {{ serialize_pep440(base, stage, revision + 1, dev=distance, metadata=[commit]) }}
+    {%- else -%}
+        {{ serialize_pep440(bump_version(base), stage, revision, dev=distance, metadata=[commit]) }}
+    {%- endif -%}
+"""
+
+[build-system]
+requires = ["poetry-core", "poetry-dynamic-versioning"]
+build-backend = ["poetry.core.masonry.api", "poetry_dynamic_versioning.backend"]
