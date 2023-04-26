@@ -3,11 +3,6 @@ name: Build and publish python package
 on:
   release:
     types: [ published ]
-    push:
-      branches:
-        - master
-        - dev
-        - feature/*
 
 jobs:
   publish_pypi_development:
