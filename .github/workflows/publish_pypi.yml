@@ -19,6 +19,7 @@ jobs:
           PUBLISH_REGISTRY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
           PACKAGE_DIRECTORY: ${{ vars.PACKAGE_DIRECTORY }}
           PUBLISH_REGISTRY: ${{ vars.PUBLISH_REGISTRY }}
+          BRANCH: dev
           POETRY_VERSION: 1.4.2
           POETRY_CORE_VERSION: 1.5.2
   publish_pypi_production:
