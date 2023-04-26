@@ -1,2 +1,2 @@
 # meural-photo-prep
-App to prep photos for use with Netflix Meural Picture Frames
+App to prep photos for use with Netgear Meural Picture Frames
