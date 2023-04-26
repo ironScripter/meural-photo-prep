@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "meural-photo-prep"
-version = "0.1.0"
+version = "v1.0.0-alpha"
 description = "Module to assist in preparing photos for Netgear's Meural Canvas"
 authors = ["James Arnett <james.arnett@gmail.com>"]
 readme = "README.md"
