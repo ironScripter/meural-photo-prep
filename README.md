@@ -58,7 +58,7 @@ import meural_photo_prep as mpp
 mpp.prep_photos("<INPUT_PATH>", "<OUTPUT_PATH>")
 ```
 #### Output
-```bash
+```
 <OUTPUT_PATH>
 |__ meural1
     |__ img1.jpg # All names have special characters removed
@@ -67,3 +67,4 @@ mpp.prep_photos("<INPUT_PATH>", "<OUTPUT_PATH>")
     |__ img2.jpg.thumb
     |__ img3.jpg
     |__ img3.jpg.thumb
+```

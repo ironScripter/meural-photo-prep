@@ -1,6 +1,6 @@
 .idea
 data
-
+.ruff_cache
 
 # Mac Files
 .DS_Store
