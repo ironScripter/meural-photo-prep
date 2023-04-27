@@ -5,6 +5,7 @@ description = "Module to assist in preparing photos for Netgear's Meural Canvas"
 authors = ["James Arnett <james.arnett@gmail.com>"]
 readme = "README.md"
 packages = [{include = "meural_photo_prep"}]
+repository = "https://github.com/ironScripter/meural-photo-prep/"
 
 [tool.poetry.dependencies]
 python = "^3.9"

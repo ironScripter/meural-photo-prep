@@ -14,7 +14,7 @@ For more information on the Netgear Meural Picture Frames formatting need please
 * [Pillow](https://pillow.readthedocs.io/en/stable/)
 ## Installation
 ### Requirements
-* Python 3.10+
+* Python 3.9+
 
 ### PIP
 ```bash
@@ -31,7 +31,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-meural-photo-prep = "^1.0.0"
+meural-photo-prep = "^1.0.1"
 
 [build-system]
 requires = ["poetry-core"]
