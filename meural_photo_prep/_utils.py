@@ -1,11 +1,10 @@
 import os
 import threading
-
 from PIL import Image
 import queue
 
 
-def create_folder_structure(output_folder):
+def _create_folder_structure(output_folder):
     """
     Create the folder structure for the output files
     """
@@ -16,7 +15,7 @@ def create_folder_structure(output_folder):
         os.makedirs(subfolder)
 
 
-def get_image_file_paths_from_folder(input_folder: os.path) -> queue.Queue:
+def _get_image_file_paths_from_folder(input_folder: os.path) -> queue.Queue:
     """
     Get the image paths from a folder
     """
@@ -29,7 +28,7 @@ def get_image_file_paths_from_folder(input_folder: os.path) -> queue.Queue:
     return q
 
 
-def process_images(image: Image, output_folder: str):
+def _process_images(image: Image, output_folder: str):
     """
     Process the images for the Meural
     """
@@ -57,14 +56,14 @@ def process_images(image: Image, output_folder: str):
 
 
 # Function to take the queue of images and process them threaded
-def process_image_queue(q: queue.Queue, output_folder: str):
+def _process_image_queue(q: queue.Queue, output_folder: str):
     """
     Process the images in the queue
     """
     while not q.empty():
         file_path = q.get()
         image = Image.open(file_path)
-        threading.Thread(target=process_images, args=(image, output_folder)).start()
+        threading.Thread(target=_process_images, args=(image, output_folder)).start()
         
 
 # Wrapper function to process the images
@@ -72,6 +71,6 @@ def prep_photos(input_folder: str, output_folder: str):
     """
     Wrapper function to process the images
     """
-    create_folder_structure(output_folder)
-    q = get_image_file_paths_from_folder(input_folder)
-    process_image_queue(q, output_folder)
+    _create_folder_structure(output_folder)
+    q = _get_image_file_paths_from_folder(input_folder)
+    _process_image_queue(q, output_folder)
