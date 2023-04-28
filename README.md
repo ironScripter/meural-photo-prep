@@ -1,4 +1,8 @@
 # Netgear Meural Photo Preparation
+[![PyPI version](https://img.shields.io/pypi/v/meural-photo-prep?label=Latest%20Version&logo=pypi&logoColor=orange&style=plastic)](https://pypi.org/project/meural-photo-prep/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/meural-photo-prep?logo=pypi&logoColor=orange&style=plastic)](https://pypi.org/project/meural-photo-prep/)
+[![Github Issues](https://img.shields.io/github/issues-raw/ironScripter/meural-photo-prep?logo=github&style=plastic)](https://github.com/ironScripter/meural-photo-prep/issues)
+
 Python Package to prepare photos for use with Netgear Meural Picture Frames. \
 __This package is not affiliated with Netgear in any way.__ \
 Netgear Meural Picture Frames require photos to be formatted in a specific way. \
