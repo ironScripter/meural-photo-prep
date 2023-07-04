@@ -9,7 +9,7 @@ repository = "https://github.com/ironScripter/meural-photo-prep/"
 
 [tool.poetry.dependencies]
 python = "^3.9"
-pillow = "^9.5.0"
+pillow = ">=9.5,<11.0"
 
 [build-system]
 requires = ["poetry-core"]
